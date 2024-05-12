@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body bgcolor="gray">
+  <div class="cor" id="cor">
+  <input id="id" type="text">
+  <button onclick="codigo()">enviar</button>
+  </div>
+  <style>
+  .cor input,
+  .cor button{
+    color: white;
+    background-color: black;
+  }
+  </style>
+  <div id="escrever"></div>
+  <script>
+  var test = null;
+  function codigo(){
+    var digito = document.getElementById("id").value;
+    if (test == "cor"){
+      document.getElementById("escrever").style.color = digito;
+      test = null
+    }
+        if (test == "write"){
+      document.getElementById("escrever").innerHTML += digito;
+      test = null;
+    }
+    if (digito == "exibir"){
+      test = "write";
+  }
+    if (digito == "pular"){
+     document.getElementById("escrever").innerHTML += "<br>";
+    }
+    if(digito == "delete"){
+      document.getElementById("escrever").innerHTML = "";
+    }
+    if(digito == "cor"){
+      test = "cor";
+    }
+    if(digito == "esconder"){
+      document.getElementById("cor").style = "display: none"
+    }
+    document.getElementById("id").value = null;
+  }
+  </script>
+</body>
+</html>
